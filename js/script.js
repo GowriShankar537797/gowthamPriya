@@ -13,13 +13,27 @@
   });
 })(jQuery);
 
-$(document).on("click", function () {
-  document.getElementById("my_audio").play();
+$(document).on("click", function (e) {
+  const value = e?.target?.alt || "my_audio";
+  pauseAudio(value);
+  if (value === "malai") {
+    document.getElementById("malai").play();
+  } else if (value === "manamagal") {
+    document.getElementById("manamagal").play();
+  } else if (value === "drams") {
+    document.getElementById("drams").play();
+  } else {
+    document.getElementById("my_audio").play();
+  }
   console.log("Shaadi me zaroor aana");
 });
 
-function pauseAudio() {
-  document.getElementById("my_audio").pause();
+function pauseAudio(stop) {
+  ["my_audio", "malai", "manamagal", "drams"]
+    .filter((it) => it !== stop)
+    .forEach((it) => {
+      document.getElementById(it).pause();
+    });
   console.log("Shaadi me pakka aana");
   event.stopPropagation();
 }
@@ -90,4 +104,4 @@ var styles2 = [
   "font-size: 32px",
 ].join(";");
 
-console.log("\n\n%c SAVE THE DATE: 14th Feb, 2021", styles);
+console.log("\n\n%c SAVE THE DATE: 12th Mar, 2025", styles);

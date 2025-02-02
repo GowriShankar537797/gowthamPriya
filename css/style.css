@@ -361,7 +361,12 @@ a {
   right: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 }
-
+.tile__img {
+  max-width: 45%;
+  text-align: center;
+  height: auto;
+  object-fit: cover;
+}
 @media only screen and (max-width: 600px) {
   a.arrow__btn {
     display: none;
@@ -370,17 +375,15 @@ a {
     width: 150px;
     height: 150px;
   }
-
+  .tile__img {
+    max-width: 70%;
+    text-align: center;
+    height: auto;
+    object-fit: cover;
+  }
   .wrapper section .item {
     max-width: 100%;
   }
-}
-
-.tile__img {
-  max-width: 45%;
-  text-align: center;
-  height: auto;
-  object-fit: cover;
 }
 
 blockquote {
